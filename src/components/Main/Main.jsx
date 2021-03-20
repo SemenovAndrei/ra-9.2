@@ -47,10 +47,8 @@ const PostContent = styled.p`
   }
 `
 
-const url = 'http://localhost:7777/posts'
-
 export default function Main() {
-  const [loading, error, data] = useJsonFetch(url)
+  const [loading, error, data] = useJsonFetch(process.env.REACT_APP_URL_POSTS)
 
   const onClick = (event) => {
     localStorage.setItem('selectedPost', event.target.closest('a').dataset.data)

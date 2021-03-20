@@ -81,7 +81,7 @@ export default function EditPost(props) {
 
   const uploadPost = async () => {
     try {
-      const response = await fetch('http://localhost:7777/posts', {
+      const response = await fetch(process.env.REACT_APP_URL_POSTS, {
         method: 'POST',
         'Content-Type': 'application/json',
         body: JSON.stringify({ id: props.id, content: content }),

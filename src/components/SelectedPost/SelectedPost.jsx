@@ -67,9 +67,12 @@ export default function SelectedPost(props) {
 
   const onDelete = async (event) => {
     try {
-      const response = await fetch(`http://localhost:7777/posts/${event.target.id}`, {
-        method: 'DELETE',
-      })
+      const response = await fetch(
+        `${process.env.REACT_APP_URL_POSTS}/${event.target.id}`,
+        {
+          method: 'DELETE',
+        }
+      )
 
       if (!response.ok) {
         throw new Error(response.statusText)
