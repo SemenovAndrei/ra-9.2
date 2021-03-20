@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/ra-9.2/static/css/main.2eae2a7e.chunk.css",
+    "main.js": "/ra-9.2/static/js/main.a8ee59eb.chunk.js",
+    "main.js.map": "/ra-9.2/static/js/main.a8ee59eb.chunk.js.map",
+    "runtime-main.js": "/ra-9.2/static/js/runtime-main.ed5a2c2d.js",
+    "runtime-main.js.map": "/ra-9.2/static/js/runtime-main.ed5a2c2d.js.map",
+    "static/js/2.030803a0.chunk.js": "/ra-9.2/static/js/2.030803a0.chunk.js",
+    "static/js/2.030803a0.chunk.js.map": "/ra-9.2/static/js/2.030803a0.chunk.js.map",
+    "static/js/3.53d255ac.chunk.js": "/ra-9.2/static/js/3.53d255ac.chunk.js",
+    "static/js/3.53d255ac.chunk.js.map": "/ra-9.2/static/js/3.53d255ac.chunk.js.map",
+    "index.html": "/ra-9.2/index.html",
+    "static/css/main.2eae2a7e.chunk.css.map": "/ra-9.2/static/css/main.2eae2a7e.chunk.css.map",
+    "static/js/2.030803a0.chunk.js.LICENSE.txt": "/ra-9.2/static/js/2.030803a0.chunk.js.LICENSE.txt",
+    "static/media/Loading_icon.1a32f552.gif": "/ra-9.2/static/media/Loading_icon.1a32f552.gif"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ed5a2c2d.js",
+    "static/js/2.030803a0.chunk.js",
+    "static/css/main.2eae2a7e.chunk.css",
+    "static/js/main.a8ee59eb.chunk.js"
+  ]
+}
