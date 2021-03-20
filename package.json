@@ -45,7 +45,7 @@
       "git add ."
     ]
   },
-  "homepage": "https://i-hit.github.io/ra-9.2",
+  "homepage": "https://i-hit.github.io/",
   "eslintConfig": {
     "extends": [
       "react-app",
