@@ -1,7 +1,8 @@
 import moment from 'moment'
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
+import EditPost from '../EditPost/EditPost'
 
 const Post = styled.li`
   padding: 10px;
@@ -46,8 +47,22 @@ const PostContent = styled.p`
     background-color: #808080;
   }
 `
+const ButtonEdit = styled.button`
+  font-size: inherit;
+  padding: 10px;
+  cursor: pointer;
+  color: white;
+  background-color: #7171ff;
+  text-decoration: none;
+`
 
-export default function SelectedPost() {
+export default function SelectedPost(props) {
+  const [editMode, setEditMode] = useState(false)
+
+  const onToggleEditMode = () => {
+    setEditMode(!editMode)
+  }
+
   const post = JSON.parse(localStorage.getItem('selectedPost'))
 
   const onDelete = async (event) => {
@@ -64,6 +79,17 @@ export default function SelectedPost() {
     }
   }
 
+  if (editMode) {
+    return (
+      <EditPost
+        {...props}
+        id={post.id}
+        content={post.content}
+        onClose={onToggleEditMode}
+      />
+    )
+  }
+
   return (
     <Post>
       <img src={post.avatar} alt={post.name} />
@@ -71,7 +97,7 @@ export default function SelectedPost() {
       <span>{moment(post.created).fromNow()}</span>
       <PostContent>{post.content}</PostContent>
       <Controls>
-        <button>CHANGE</button>
+        <ButtonEdit onClick={onToggleEditMode}>Редактировать</ButtonEdit>
         <Link to="/" id={post.id} onClick={onDelete}>
           Удалить
         </Link>

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
@@ -45,9 +45,26 @@ const TextArea = styled.textarea`
   margin-bottom: 15px;
   border: 1px solid rgb(202, 202, 202);
 `
+const ButtonClose = styled.button`
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: inherit;
+  padding: 10px;
+  cursor: pointer;
+  color: #c0c0c0;
+  background-color: inherit;
+  border-style: none;
+`
 
-export default function NewPost() {
+export default function EditPost(props) {
   const textarea = useRef(null)
+
+  const [content, setContent] = useState(props.content)
+
+  const onWriteContent = (event) => {
+    setContent(event.target.value)
+  }
 
   const onClick = (event) => {
     if (!textarea.current.value) {
@@ -67,7 +84,7 @@ export default function NewPost() {
       const response = await fetch('http://localhost:7777/posts', {
         method: 'POST',
         'Content-Type': 'application/json',
-        body: JSON.stringify({ id: 0, content: textarea.current.value }),
+        body: JSON.stringify({ id: props.id, content: content }),
       })
 
       if (!response.ok) {
@@ -78,18 +95,22 @@ export default function NewPost() {
     }
   }
 
-  useEffect(() => {
-    textarea.current.focus()
-  }, [])
+  const onClose = () => {
+    props.onClose()
+  }
 
   return (
     <Post>
-      <Link to="/" className="close">
-        X
-      </Link>
-      <TextArea ref={textarea} rows="10"></TextArea>
+      <h3>Редактировать пост</h3>
+      <ButtonClose onClick={onClose}>X</ButtonClose>
+      <TextArea
+        ref={textarea}
+        rows="10"
+        value={content}
+        onChange={onWriteContent}
+      ></TextArea>
       <Link to="/" onClick={onClick}>
-        Опубликовать
+        Сохранить
       </Link>
     </Post>
   )
