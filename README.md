@@ -1,7 +1,7 @@
-# ra-6.3
+# ra-9.2
 
-[![Build status](https://ci.appveyor.com/api/projects/status/1hd96kj7geie9ati?svg=true)](https://ci.appveyor.com/project/i-hit/ra-6-3)
+[![Build status](https://ci.appveyor.com/api/projects/status/9xixc23jy1be515k?svg=true)](https://ci.appveyor.com/project/i-hit/ra-9-2)
 
-[GH-Pages](https://i-hit.github.io/ra-6.3/)
+[GH-Pages](https://i-hit.github.io/ra-9.2/)
 
-[Heroku](https://ra-6-3-server.herokuapp.com/messages)
+[Heroku](https://ra-9-2--server.herokuapp.com/posts)
